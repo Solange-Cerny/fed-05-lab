@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
 <body>
   <h1 id="date">HTML5 forms:</h1>
   <form id="the-form">   
@@ -15,6 +17,24 @@
     </fieldset>
   </form>
   <p id="the-value" class="value">50</p>
+
+<!--
+  <script src="js/scripts.js"></script>
+-->
+  <script>
+"use-strict";
+const theForm = document.getElementById("the-form");
+const theDate = document.getElementById("date");
+const getDate = document.querySelector('input[type="date"]');
+
+getDate.addEventListener("change", showDate);
+
+function showDate(){
+  let d = new Date(getDate.value);
+  let originalValue = theDate.innerText;
+  theDate.innerText = "${originalValue} ${d.toDateString()}";
+}
+
+  </script> 
 </body>
-</head>
 </html>
